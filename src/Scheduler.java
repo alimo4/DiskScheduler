@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public abstract class Scheduler {
     String name;
-    int size, target, previousTarget;
+    int size, target;
     ArrayList<Integer> s;
     ArrayList<Integer> t;
     ArrayList<Integer> pending = new ArrayList<>();

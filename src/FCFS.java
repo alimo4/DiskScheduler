@@ -13,11 +13,10 @@ public class FCFS extends Scheduler{
      * @param request to be updated
      */
     protected void servicing(int time, int head, int request) {
-        pending.remove(0);
+        pending.remove((Integer) head);
         Printer.print(time, head, request, target, pending.toArray(new Integer[0]), true);
 
         if(!pending.isEmpty()) {
-            previousTarget = target;
             target = pending.get(0);
         }
     }
