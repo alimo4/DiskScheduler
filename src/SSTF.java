@@ -8,22 +8,11 @@ public class SSTF extends Scheduler{
     }
 
     /**
-     * Remove request from pending list and update both previous target and current target according to SSTF
-     * @param time Needed for printing
-     * @param head Needed for printing
-     * @param request to be updated
+     * Calculate seek time from head location to each request
+     * @return request with minimum seek time
      */
-    protected void servicing(int time, int head, int request) {
-        pending.remove((Integer) head);
-        Printer.print(time, head, request, target, pending.toArray(new Integer[0]), true);
-
-        if(!pending.isEmpty()) {
-            target = getTarget();
-        }
-    }
-
-    // get next target with the shortest seek time
-    private int getTarget() {
+    @Override
+    protected int getTarget() {
         ArrayList<Integer> distances = new ArrayList<>();
 
         // calculate the distance to each request

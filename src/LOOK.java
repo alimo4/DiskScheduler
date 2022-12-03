@@ -6,13 +6,8 @@ public class LOOK extends Scheduler{
         super("LOOK", first, s, t);
     }
 
-    /**
-     * Remove request from pending list and update both previous target and current target according to LOOK
-     * @param time Needed for printing
-     * @param head Needed for printing
-     * @param request to be updated
-     */
-    protected void servicing(int time, int head, int request) {
-
+    @Override
+    protected int getTarget() {
+        return 0;
     }
 }

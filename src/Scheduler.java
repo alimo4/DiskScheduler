@@ -51,6 +51,15 @@ public abstract class Scheduler {
 
     }
 
+    private void servicing(int time, int head, int request) {
+        pending.remove((Integer) head);
+        Printer.print(time, head, request, target, pending.toArray(new Integer[0]), true);
+
+        if(!pending.isEmpty()) {
+            target = getTarget();
+        }
+    }
+
     // Unique scheduling algorithm
-    protected abstract void servicing(int time, int head, int request);
+    protected abstract int getTarget();
 }

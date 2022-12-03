@@ -7,17 +7,11 @@ public class FCFS extends Scheduler{
     }
 
     /**
-     * Remove request from pending list and update both previous target and current target according to FCFS
-     * @param time Needed for printing
-     * @param head Needed for printing
-     * @param request to be updated
+     * First come - first serve target will be first in pending list
+     * @return first in pending list
      */
-    protected void servicing(int time, int head, int request) {
-        pending.remove((Integer) head);
-        Printer.print(time, head, request, target, pending.toArray(new Integer[0]), true);
-
-        if(!pending.isEmpty()) {
-            target = pending.get(0);
-        }
+    @Override
+    protected int getTarget() {
+        return pending.get(0);
     }
 }
