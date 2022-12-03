@@ -23,5 +23,8 @@ public class Driver {
         // run each operation
         FCFS fcfs = new FCFS(first, s, t);
         fcfs.run();
+
+        SSTF SSTF = new SSTF(first, s, t);
+        SSTF.run();
     }
 }
