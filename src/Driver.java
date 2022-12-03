@@ -5,19 +5,22 @@ import java.util.Scanner;
 
 public class Driver {
     public static void main(String[] args) throws FileNotFoundException {
-        String sampleInput = "";
-
+        // lists to hold intervals and requests
         ArrayList<Integer> s = new ArrayList<>();
         ArrayList<Integer> t = new ArrayList<>();
 
+        // file scanner
         Scanner inFile = new Scanner(new File("input.txt"));
+        // read disk size
         int first = inFile.nextInt();
-        System.out.println(first);
+
+        // read intervals and requests into lists
         while(inFile.hasNext()) {
             s.add(inFile.nextInt());
             t.add(inFile.nextInt());
         }
 
+        // run each operation
         FCFS fcfs = new FCFS(first, s, t);
         fcfs.run();
     }

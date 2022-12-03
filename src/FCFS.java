@@ -6,10 +6,18 @@ public class FCFS extends Scheduler{
         super("FCFS", first, s, t);
     }
 
-    protected void servicing(int time, int i, int request) {
-        if(target - time < s.get(i)) {
-            pending.remove(0);
-            Printer.print(time, request, target, pending.toArray(new Integer[0]), true);
+    /**
+     * Remove request from pending list and update both previous target and current target according to FCFS
+     * @param time Needed for printing
+     * @param head Needed for printing
+     * @param request to be updated
+     */
+    protected void servicing(int time, int head, int request) {
+        pending.remove(0);
+        Printer.print(time, head, request, target, pending.toArray(new Integer[0]), true);
+
+        if(!pending.isEmpty()) {
+            previousTarget = target;
             target = pending.get(0);
         }
     }
