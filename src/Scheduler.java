@@ -48,7 +48,7 @@ public abstract class Scheduler {
             time++;
         } while(!pending.isEmpty());
 
-
+        Printer.printFinal(time - 1);
     }
 
     private void servicing(int time, int head, int request) {

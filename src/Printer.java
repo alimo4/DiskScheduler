@@ -26,4 +26,8 @@ public class Printer {
         }
         return s;
     }
+
+    public static void printFinal(int time) {
+        System.out.println("\nTotal run-time was " + time + "\n");
+    }
 }

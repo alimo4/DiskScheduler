@@ -24,7 +24,10 @@ public class Driver {
         FCFS fcfs = new FCFS(first, s, t);
         fcfs.run();
 
-        SSTF SSTF = new SSTF(first, s, t);
-        SSTF.run();
+        SSTF sstf = new SSTF(first, s, t);
+        sstf.run();
+
+        LOOK look = new LOOK(first, s, t);
+        look.run();
     }
 }

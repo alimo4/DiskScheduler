@@ -21,7 +21,7 @@ public class SSTF extends Scheduler{
             distances.add(Math.abs(target - i));
         }
 
-        // get index of target with minimum distance
+        // get index of request with minimum distance
         int indexOfNextTarget = distances.indexOf(Collections.min(distances));
 
         return pending.get(indexOfNextTarget);
